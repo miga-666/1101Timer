@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_1101Timer.MainPage">
+
+    <StackLayout BackgroundColor="black" Padding="30">
+
+        <Label x:Name="printCount" 
+               Text="0"
+               TextColor="White"
+               HorizontalOptions="CenterAndExpand" 
+               VerticalOptions="CenterAndExpand"
+               FontSize="50" />
+
+    </StackLayout>
+
+</ContentPage>

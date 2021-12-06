@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "frAqCWcByQcETpVTgL8aEogFlpj5bKIMXyF8F1IdvTrdh+DDdi2WeZfON5aomXq+j+cplGVTj2T6o10KYB9iYw==",
+  "success": true,
+  "projectFilePath": "D:\\source\\git\\1101Timer\\1101Timer\\1101Timer.iOS\\1101Timer.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\miga\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+  ],
+  "logs": []
+}
