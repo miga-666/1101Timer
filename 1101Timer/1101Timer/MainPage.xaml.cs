@@ -10,7 +10,6 @@ using System.Timers;
 
 namespace _1101Timer
 {
-
     public partial class MainPage : ContentPage
     {
         public System.Timers.Timer aTimer; //定義全域的一個計時器
@@ -40,7 +39,6 @@ namespace _1101Timer
         //Stop_Clicked(): 暫停 timer
         private void Stop_Clicked(object sender, EventArgs e)
         {
-
             aTimer.Stop();
         }
         //Reset_Clicked(): 重設 timer
