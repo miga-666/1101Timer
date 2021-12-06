@@ -3,18 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="_1101Timer.MainPage">
 
-    <!--<StackLayout>
-        <Label Text="100" FontSize="16" x:Name="printCount" />
-    </StackLayout>-->
 
-    <StackLayout BackgroundColor="black" Padding="30">
+    <StackLayout BackgroundColor="black" Padding="30, 50, 30, 50" >
+
+        <Grid Padding="3"
+              BackgroundColor="WhiteSmoke">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Entry x:Name="totalTime"
+                   Placeholder="seconds"
+                   PlaceholderColor="Gray"
+                   Grid.Column="0"
+                   BackgroundColor="Black"
+                   TextColor="WhiteSmoke"
+                   WidthRequest="100"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="CenterAndExpand"
+                   FontSize="20" />
+            
+            <Button Text="submit" 
+                    BackgroundColor="WhiteSmoke"
+                    TextColor="Black"
+                    Grid.Column="1"
+                    Clicked="Count_Clicked" />
+        </Grid>
+
 
         <Label x:Name="thetime" 
+               Grid.Column="0"
                Text="0"
                TextColor="White"
-               HorizontalOptions="CenterAndExpand" 
                VerticalOptions="CenterAndExpand"
-               FontSize="50" />
+               HorizontalTextAlignment="Center"
+               FontSize="90" />
+
+
 
         <Grid Padding="20">
             <Grid.ColumnDefinitions>
@@ -26,6 +52,7 @@
                     CornerRadius="50"
                     BackgroundColor="#5fcc56"
                     TextColor="PaleGoldenrod"
+                    BorderWidth="1"
                     Clicked="Start_Clicked" />
             <Button Text="STOP"
                     Grid.Column="1"
@@ -40,6 +67,8 @@
                 BackgroundColor="Black"
                 TextColor="PaleGoldenrod"
                 FontSize="16"
+                BorderColor="WhiteSmoke"
+                BorderWidth="1"
                 Clicked="Reset_Clicked" />
 
     </StackLayout>

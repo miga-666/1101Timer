@@ -13,75 +13,61 @@ namespace _1101Timer
 
     public partial class MainPage : ContentPage
     {
-        public System.Timers.Timer aTimer; //定義一個計時器
+        public System.Timers.Timer aTimer; //定義全域的一個計時器
         public int count; //經過時間(秒)
+
         public MainPage()
         {
+            //初始化
             InitializeComponent();
+        }
 
+        //Count_Clicked(): 確定倒數時間
+        public void Count_Clicked(object sender, EventArgs esender)
+        {
             aTimer = new System.Timers.Timer(1000); //1000毫秒 = 1 秒
             aTimer.Elapsed += OnTimeEvent;
-            
+
+            count = Int32.Parse(totalTime.Text);
+            thetime.Text = totalTime.Text;
         }
 
-        public class StatusChecker
-        {
-            private int invokeCount;
-            private int maxCount;
-            public StatusChecker(int count)
-            {
-                invokeCount = 0;
-                maxCount = count;
-            }
-
-            //啟動
-            // This method is called by the timer delegate.
-            public void CheckStatus(Object stateInfo)
-            {
-                AutoResetEvent autoEvent = (AutoResetEvent)stateInfo;
-
-                invokeCount++;
-                //thetime.Text = invokeCount.ToString();
-
-                if (invokeCount == maxCount)
-                {
-                    invokeCount = 0;
-                    autoEvent.Set();
-                }
-            }
-        }
-
+        //Start_Clicked(): 開始 timer
         private void Start_Clicked(object sender, EventArgs e)
         {
             aTimer.Start();
-            //Start(): aTimer.Enabled = true
         }
-        //暫停
+        //Stop_Clicked(): 暫停 timer
         private void Stop_Clicked(object sender, EventArgs e)
         {
 
             aTimer.Stop();
-            //Stop(): aTimer.Enabled = false
         }
-        //重設
+        //Reset_Clicked(): 重設 timer
         private void Reset_Clicked(object sender, EventArgs e)
         {
-            //aTimer.Dispose();
             //Dispose()和Close()都可以
             aTimer.Close();
-            count = 0; //時間歸零
-            //thetime.Text = ConvertTime(count);
-            thetime.Text = count.ToString();
+            count = Int32.Parse(totalTime.Text);
+            thetime.Text = totalTime.Text;
         }
-        //觸發事件(當時間間隔到了, 要做什麼事)
+        //OnTimeEvent(): 觸發事件(當時間間隔到了, 要做什麼事)
         public void OnTimeEvent(Object source, ElapsedEventArgs e)
         {
-
             //xamarin特有的方法, 在裝置UI主執行緒上呼叫動作。
-            Device.InvokeOnMainThreadAsync(() =>
-            {
-                count++;
+            Device.InvokeOnMainThreadAsync(() => {
+                
+                //每一秒減 1
+                count--;
                 thetime.Text = count.ToString();
+                //Console.WriteLine(count);
+
+                //時間到 -> timer 停止 & 跳出通知
+                if (count <= 0)
+                {
+                    aTimer.Stop();
+                    DisplayAlert("", "Timeout!", "OK"); //跳出視窗
+                }
             });
         }
     }
