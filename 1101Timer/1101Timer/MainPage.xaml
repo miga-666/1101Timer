@@ -3,14 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="_1101Timer.MainPage">
 
+    <!--<StackLayout>
+        <Label Text="100" FontSize="16" x:Name="printCount" />
+    </StackLayout>-->
+
     <StackLayout BackgroundColor="black" Padding="30">
 
-        <Label x:Name="printCount" 
+        <Label x:Name="thetime" 
                Text="0"
                TextColor="White"
                HorizontalOptions="CenterAndExpand" 
                VerticalOptions="CenterAndExpand"
                FontSize="50" />
+
+        <Grid Padding="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="START" 
+                    Grid.Column="0"
+                    CornerRadius="50"
+                    BackgroundColor="#5fcc56"
+                    TextColor="PaleGoldenrod"
+                    Clicked="Start_Clicked" />
+            <Button Text="STOP"
+                    Grid.Column="1"
+                    CornerRadius="50"
+                    BackgroundColor="#cc2b31"
+                    TextColor="PaleGoldenrod"
+                    Clicked="Stop_Clicked" />
+        </Grid>
+        <Button Text="RESET"
+                HorizontalOptions="Center"
+                CornerRadius="40"
+                BackgroundColor="Black"
+                TextColor="PaleGoldenrod"
+                FontSize="16"
+                Clicked="Reset_Clicked" />
 
     </StackLayout>
 
