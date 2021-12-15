@@ -54,18 +54,26 @@ namespace _1101Timer
         {
             //xamarin特有的方法, 在裝置UI主執行緒上呼叫動作。
             Device.InvokeOnMainThreadAsync(() => {
-                
                 //每一秒減 1
                 count--;
                 thetime.Text = count.ToString();
                 //Console.WriteLine(count);
-
-                //時間到 -> timer 停止 & 跳出通知
-                if (count <= 0)
+                if (count == 0)
                 {
-                    aTimer.Stop();
-                    DisplayAlert("", "Timeout!", "OK"); //跳出視窗
+                    //時間到 -> timer 停止 & 跳出通知
+                     Stop();
                 }
+            });
+        }
+        private void Stop()
+        {
+            aTimer.Stop();
+            aTimer.Dispose();
+
+            DependencyService.Get<IAudio>().PlayAudioFile("grinch.mp3");
+            Device.InvokeOnMainThreadAsync(async () => {
+                await DisplayAlert("", "TIMEOUT!", null, "OK");
+                DependencyService.Get<IAudio>().StopAudioFile();
             });
         }
     }

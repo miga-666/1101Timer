@@ -26,3 +26,7 @@ D:\source\git\1101Timer\1101Timer\1101Timer\bin\Debug\netstandard2.0\1101Timer.d
 D:\source\git\1101Timer\1101Timer\1101Timer\bin\Debug\netstandard2.0\ref\1101Timer.dll
 D:\source\git\1101Timer\1101Timer\1101Timer\bin\Debug\netstandard2.0\1101Timer.pdb
 D:\source\git\1101Timer\1101Timer\1101Timer\obj\Debug\netstandard2.0\XamlC.stamp
+D:\source\git\1101Timer\1101Timer\1101Timer\bin\Debug\netstandard2.0\Mono.Android.dll
+D:\source\git\1101Timer\1101Timer\1101Timer\bin\Debug\netstandard2.0\Mono.Android.pdb
+D:\source\git\1101Timer\1101Timer\1101Timer\bin\Debug\netstandard2.0\Mono.Android.xml
+D:\source\git\1101Timer\1101Timer\1101Timer\obj\Debug\netstandard2.0\1101Timer.csproj.CopyComplete
